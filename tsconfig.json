@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "rootDir": ".",
+    "paths": {
+      "@unif/react-native-icons": ["./src/index"]
+    },
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "customConditions": [
+      "unif-react-native-icons-source",
+      "react-native-strict-api"
+    ],
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react-jsx",
+    "lib": ["ESNext", "DOM"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ESNext",
+    "verbatimModuleSyntax": true
+  },
+  "include": ["src", "__tests__", "type-tests", "example/src"],
+  "exclude": ["node_modules", "lib", "website"]
+}

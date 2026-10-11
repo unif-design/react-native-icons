@@ -1,0 +1,21 @@
+# Unif Icons
+
+> Unif React Native SVG icon components
+
+文档构建依据：`@unif/react-native-icons@0.0.0`；使用时核对实际安装版本。
+
+先查找当前功能，再读取对应 API、示例或 FAQ。源码链接供查阅，应用从包根公开接口导入。
+迁移、测试和研发技能按任务读取；这些资料不自动加入产品运行时模型上下文。
+
+## 开始使用
+
+- [安装与使用](md/getting-started.md)
+
+## 概览
+
+- [组件 API](md/api.md)
+- [维护图标](md/contributing.md)
+
+## Optional
+
+- [完整全文](llms-full.txt) — 仅在确需全局资料时读取；普通查询优先选择相关单页。

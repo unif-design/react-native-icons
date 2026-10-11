@@ -1,0 +1,94 @@
+:root {
+  --ifm-color-primary: #2855d9;
+  --ifm-font-family-base:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+[data-theme='dark'] {
+  --ifm-color-primary: #9bb4ff;
+}
+.icons-page {
+  padding-top: 3.5rem;
+  padding-bottom: 4rem;
+}
+.icons-eyebrow {
+  color: var(--ifm-color-primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+.icons-page h1 {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  letter-spacing: -0.04em;
+}
+.icons-intro {
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 2rem;
+}
+.icons-search {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+.icons-search input {
+  background: var(--ifm-background-surface-color);
+  color: var(--ifm-font-color-base);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 0.75rem;
+  padding: 0.9rem 1rem;
+  font: inherit;
+}
+.icons-count {
+  margin-top: 0.75rem;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.9rem;
+}
+.icons-feedback {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  padding: 0.5rem;
+  min-height: 2.5rem;
+  background: transparent;
+  font-size: 0.8rem;
+}
+.icons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 0.75rem;
+}
+.icons-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.5rem 0.75rem;
+  min-height: 125px;
+  color: var(--ifm-font-color-base);
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 0.8rem;
+  cursor: pointer;
+}
+.icons-cell:hover {
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+}
+.icons-cell:focus-visible,
+.icons-search input:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 3px;
+}
+.icons-cell span {
+  font-size: 0.75rem;
+  overflow-wrap: anywhere;
+  max-width: 100%;
+}
+@media (max-width: 480px) {
+  .icons-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .icons-page {
+    padding-top: 2rem;
+  }
+}

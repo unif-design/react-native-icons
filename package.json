@@ -1,0 +1,195 @@
+{
+  "name": "@unif/react-native-icons",
+  "version": "0.0.0",
+  "description": "Unif React Native SVG icon components",
+  "main": "./lib/module/index.js",
+  "types": "./lib/typescript/src/index.d.ts",
+  "exports": {
+    ".": {
+      "unif-react-native-icons-source": "./src/index.tsx",
+      "types": "./lib/typescript/src/index.d.ts",
+      "default": "./lib/module/index.js"
+    },
+    "./package.json": "./package.json",
+    "./*": {
+      "unif-react-native-icons-source": "./src/icons/*.tsx",
+      "types": "./lib/typescript/src/icons/*.d.ts",
+      "default": "./lib/module/icons/*.js"
+    }
+  },
+  "files": [
+    "src",
+    "lib",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__",
+    "!**/.*",
+    "!**/svg",
+    "!**/multiply.*"
+  ],
+  "scripts": {
+    "example": "yarn workspace @unif/react-native-icons-example",
+    "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build lib",
+    "prepare": "yarn generate && bob build",
+    "typecheck": "tsc --noEmit",
+    "lint": "yarn check:icons && eslint .",
+    "generate": "node scripts/build-icons.cjs",
+    "check:icons": "node scripts/build-icons.cjs --check",
+    "test": "node --test scripts/*.test.cjs && jest",
+    "release": "release-it --only-version",
+    "website": "yarn workspace @unif/react-native-icons-website",
+    "verify:package": "node scripts/verify-package.cjs"
+  },
+  "keywords": [
+    "react-native",
+    "ios",
+    "android"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unif-design/react-native-icons.git"
+  },
+  "author": "unif-design <382724935@qq.com> (https://github.com/unif-design)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/unif-design/react-native-icons/issues"
+  },
+  "homepage": "https://unif-design.github.io/react-native-icons/",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.7",
+    "@commitlint/config-conventional": "^21.0.1",
+    "@eslint/compat": "^2.1.0",
+    "@eslint/eslintrc": "^3.3.6",
+    "@eslint/js": "^9.39.5",
+    "@jest/globals": "^30.0.0",
+    "@react-native/babel-preset": "0.86.3",
+    "@react-native/eslint-config": "0.86.3",
+    "@react-native/jest-preset": "0.86.3",
+    "@release-it/conventional-changelog": "^11.0.0",
+    "@types/node": "^22.19.0",
+    "@types/react": "^19.2.0",
+    "@types/react-test-renderer": "^19.1.0",
+    "commitlint": "^21.0.1",
+    "del-cli": "^7.0.0",
+    "eslint": "^9.39.5",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-ft-flow": "^3.0.11",
+    "eslint-plugin-prettier": "^5.5.6",
+    "hermes-eslint": "^0.32.0",
+    "jest": "^30.3.0",
+    "lefthook": "^2.1.4",
+    "prettier": "^3.9.6",
+    "react": "19.2.3",
+    "react-native": "0.86.3",
+    "react-native-builder-bob": "^0.43.0",
+    "react-native-svg": "15.15.5",
+    "react-test-renderer": "19.2.3",
+    "release-it": "^20.0.1",
+    "semver": "^7.8.5",
+    "turbo": "^2.10.8",
+    "typescript": "^6.0.3"
+  },
+  "peerDependencies": {
+    "react": ">=19.2.3 <20",
+    "react-native": ">=0.86.3 <0.87",
+    "react-native-svg": ">=15.15.5 <16"
+  },
+  "workspaces": [
+    "example",
+    "website"
+  ],
+  "packageManager": "yarn@4.11.0",
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      [
+        "module",
+        {
+          "esm": true
+        }
+      ],
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
+    ],
+    "exclude": "**/{svg,__tests__,__fixtures__,__mocks__}/**"
+  },
+  "prettier": {
+    "quoteProps": "consistent",
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "useTabs": false
+  },
+  "create-react-native-library": {
+    "type": "library",
+    "languages": "js",
+    "tools": [
+      "eslint"
+    ],
+    "version": "0.63.1"
+  },
+  "sideEffects": false,
+  "jest": {
+    "preset": "@react-native/jest-preset",
+    "testEnvironment": "node",
+    "testMatch": [
+      "<rootDir>/__tests__/**/*.test.ts?(x)"
+    ],
+    "modulePathIgnorePatterns": [
+      "<rootDir>/example/node_modules",
+      "<rootDir>/website/",
+      "<rootDir>/lib/"
+    ],
+    "collectCoverageFrom": [
+      "src/createIcon.tsx"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "watchman": false
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release ${version} [skip ci]",
+      "tagName": "v${version}",
+      "requireCommits": true
+    },
+    "npm": {
+      "publish": true,
+      "skipChecks": true
+    },
+    "github": {
+      "release": true
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": {
+          "name": "angular"
+        },
+        "infile": "CHANGELOG.md"
+      }
+    }
+  },
+  "engines": {
+    "node": "^22.13.0 || ^24.3.0 || >=25.0.0"
+  }
+}
