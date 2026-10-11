@@ -15,3 +15,7 @@
 ## 验证
 
 生成与源资源一致性、组件属性/颜色/图形、类型、打包消费、Metro bundle、网站构建和 CI 静态检查分别验证。iOS/Android 原生编译、设备、远端 CI 及 npm 发布不能互相替代。
+
+## 官网样式
+
+首页直接消费 `@unif/react-native-design@0.40.4/docs-home.css`，仅作为 website 开发依赖。官网只导入该 CSS 出口，不导入 Design 的 JS 组件或主题；图标库自身的运行时与 peer 依赖不变。CSS 包仍声明完整 Design 的原生 peers，安装会显示这些未使用 peers 的提示；不要为仅消费样式而安装原生 UI 依赖。
