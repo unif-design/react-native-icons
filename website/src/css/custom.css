@@ -185,6 +185,48 @@ body {
   color: var(--foreground-muted);
   font-size: 12px;
 }
+.icons-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+.icons-categories button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1px solid var(--outline-variant);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--foreground-muted);
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.icons-categories button:hover,
+.icons-categories button[aria-pressed='true'] {
+  border-color: var(--primary);
+  background: var(--primary-container-subtle);
+  color: var(--primary);
+}
+.icons-categories span,
+.icons-category h3 > span {
+  font: 12px var(--font-mono);
+  color: var(--foreground-subtle);
+}
+.icons-category {
+  margin-top: 28px;
+}
+.icons-category h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 16px;
+  font-size: 18px;
+  scroll-margin-top: 88px;
+}
 .icons-feedback {
   white-space: pre-wrap;
   overflow-wrap: anywhere;
@@ -220,6 +262,7 @@ body {
   color: var(--primary);
 }
 .icons-cell:focus-visible,
+.icons-categories button:focus-visible,
 .icons-search input:focus-visible,
 .icons-home .hp-install-copy:focus-visible {
   outline: 2px solid var(--primary);

@@ -228,7 +228,9 @@ export default function Home() {
           <Heading as="h2" id="icons">
             找到界面需要的图标
           </Heading>
-          <p className="icons-intro">按名称搜索，点击图标复制组件代码。</p>
+          <p className="icons-intro">
+            按用途浏览或名称搜索，点击图标复制组件代码。
+          </p>
           <IconCatalog />
         </section>
       </main>
