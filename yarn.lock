@@ -6442,6 +6442,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@unif/react-native-design@npm:0.40.4":
+  version: 0.40.4
+  resolution: "@unif/react-native-design@npm:0.40.4"
+  peerDependencies:
+    "@callstack/liquid-glass": ">=0.8.2 <0.9.0"
+    react: ">=19.2.3 <20.0.0"
+    react-native: ">=0.86.0"
+    react-native-gesture-handler: ">=3.0.0 <4.0.0"
+    react-native-reanimated: ">=4.5.2 <4.7.0"
+    react-native-reanimated-carousel: ">=5.0.0 <6.0.0"
+    react-native-safe-area-context: ">=5"
+    react-native-svg: ">=15"
+    react-native-worklets: ">=0.11.0 <0.13.0"
+  checksum: 10c0/6698e911b363792820bca14b2dfffb8d459aa6a9a20d1e6e92d97fa1f1316a6d55e8cea75026a842c3ea109fe78efa96788cd69984ffada5b2a999bee0f87649
+  languageName: node
+  linkType: hard
+
 "@unif/react-native-icons-example@workspace:example":
   version: 0.0.0-use.local
   resolution: "@unif/react-native-icons-example@workspace:example"
@@ -6480,6 +6497,7 @@ __metadata:
     "@docusaurus/types": "npm:3.10.1"
     "@mdx-js/react": "npm:^3.0.0"
     "@types/react": "npm:^19.2.0"
+    "@unif/react-native-design": "npm:0.40.4"
     "@unif/react-native-icons": "workspace:*"
     babel-loader: "npm:^9.2.1"
     gray-matter: "npm:^4.0.3"

@@ -8,7 +8,7 @@ export default function IconCatalog() {
     `${name} ${sourceName}`.toLowerCase().includes(query.trim().toLowerCase())
   );
   async function copy(name: string) {
-    const code = `import { ${name} } from '@unif/react-native-icons';\n\n<${name} size={24} color="#1677ff" />`;
+    const code = `import { ${name} } from '@unif/react-native-icons';\n\n<${name} size={24} color="#EB6E00" />`;
     try {
       await navigator.clipboard.writeText(code);
       setMessage(`已复制 ${name} 的使用代码`);
