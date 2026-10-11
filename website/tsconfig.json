@@ -1,0 +1,17 @@
+{
+  "extends": "@docusaurus/tsconfig",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "ignoreDeprecations": "6.0",
+    "strict": true,
+    "customConditions": [
+      "unif-react-native-icons-source",
+      "react-native-strict-api"
+    ],
+    "paths": {
+      "@site/*": ["./*"],
+      "@unif/react-native-icons": ["../src/index"]
+    }
+  },
+  "include": ["src", "docusaurus.config.ts", "sidebars.ts"]
+}

@@ -1,0 +1,5 @@
+{
+  "extends": "./tsconfig",
+  "include": ["src"],
+  "exclude": ["src/svg", "__tests__", "example", "website", "lib"]
+}

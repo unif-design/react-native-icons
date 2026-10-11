@@ -1,0 +1,84 @@
+# Unif Icons — 全文文档聚合
+
+> 可选全文。普通查询优先通过 llms.txt 定位相关单页。
+<!-- Generated from @unif/react-native-icons@0.0.0; edit source documentation. -->
+
+## 目录
+
+- 组件 API
+- 维护图标
+- 安装与使用
+
+## 组件 API
+
+*Source: `docs/api.md` · Mirror: `md/api.md`*
+
+# 组件 API
+
+每个图标是独立组件，名称采用 PascalCase 加实际风格后缀：描边 `Outlined`、实心 `Filled`。不存在的风格不提供占位变体，也不增加 `Icon` 或 `Out` 别名。
+
+| 参数        | 类型                 | 默认值 | 说明                                 |
+| ----------- | -------------------- | ------ | ------------------------------------ |
+| size        | number               | 24     | 宽高，使用 RN 逻辑像素，不做隐式缩放 |
+| color       | ColorValue           | '#000' | 描边与实心图元颜色                   |
+| strokeWidth | number               | 1.75   | 描边宽度，纯实心图元不受影响         |
+| style       | SvgProps['style']    | —      | SVG 样式                             |
+| testID      | string               | —      | SVG 测试标识                         |
+| ref         | React.Ref&lt;Svg&gt; | —      | 转发到 react-native-svg 的 Svg 实例  |
+
+其余 SVG 属性按 `IconProps` 透传；`children`、`width`、`height`、`viewBox`、`fill`、`stroke` 由图标契约管理。颜色由消费者提供，不隐式读取 Design ThemeProvider。玻璃背景由承载图标的按钮或容器负责。
+
+图标默认 `accessible=false`。操作名称通常由父级按钮提供；独立表达语义时可显式设置：
+
+```tsx
+<StarFilled accessible accessibilityLabel="已收藏" color="#faad14" />
+```
+
+SVG 保持原始 path/circle/rect、实心细节和透明度。公开组件不创建业务动作、网络请求或全局状态。
+
+## 维护图标
+
+*Source: `docs/contributing.md` · Mirror: `md/contributing.md`*
+
+# 维护图标
+
+1. 在 `src/svg` 添加 SVG，并在 `scripts/icon-manifest.json` 登记正式组件名称。
+2. SVG 使用 `viewBox="0 0 24 24"`、根 `fill="none"`、`stroke="currentColor"`、`stroke-width="1.75"`、圆角端点与连接。直接叶子只允许 path、circle、rect，禁止脚本、外链、嵌套和固定颜色。
+3. 实心图元使用 `fill="currentColor" stroke="none"`。只有整体实心图标采用 Filled，局部实心细节仍可属于 Outlined。
+4. 运行 `yarn generate`，生成独立组件、公开出口和两个消费者的图标清单。`yarn prepare` 构建时也自动生成。
+5. 运行 `yarn lint`、`yarn typecheck`、`yarn test --maxWorkers=2 --coverage`、`yarn prepare`、`yarn verify:package` 与 `yarn website build`。
+
+生成器先完整校验所有输入；存在非法 SVG、名称冲突或清单不一致时不写生成文件。`yarn check:icons` 只读检查已生成文件是否一致。不要手改自动生成的组件或消费者清单。
+
+原生示例使用官方 Community CLI：`yarn example ios`、`yarn example android`。CI、版本、发布和文档部署来自组织 `.github` 模板。远端首次接入还需 release bot、分支检查和 npm Trusted Publisher 配置；本地构建通过不表示包已发布。
+
+## 安装与使用
+
+*Source: `docs/getting-started.md` · Mirror: `md/getting-started.md`*
+
+# 安装与使用
+
+`@unif/react-native-icons` 是独立 SVG 图标包，不依赖 Design。发布版本可按下列方式安装；仓库当前源码的发布状态见交付记录。
+
+```sh
+yarn add @unif/react-native-icons react-native-svg
+```
+
+宿主需要接入 `react-native-svg`。裸 RN iOS 首次安装原生依赖后，在应用目录执行 `bundle exec pod install` 并重建应用。Expo 项目使用 `npx expo install react-native-svg` 选择宿主兼容版本。
+
+```tsx
+import { SendOutlined, StarFilled } from '@unif/react-native-icons';
+
+<SendOutlined size={20} color="#1677ff" />
+<StarFilled size={24} color="#faad14" />
+```
+
+需要明确限定导入模块时，使用正式子路径：
+
+```tsx
+import SendOutlined from '@unif/react-native-icons/SendOutlined';
+```
+
+发布包含编译后的 JS 和类型。使用已有图标无需运行生成脚本，也无需配置 SVG transformer。命名导入的最终包体积取决于构建器；子路径组件自身不会引入全量图标目录。
+
+首批基线为 React 19.2.3、React Native 0.86.3、react-native-svg 15.15.5；其他版本不因纯 JS 实现而自动视为已验证。Web 使用 react-native-web 和 react-native-svg 的 Web 实现；完整实例见本站。
