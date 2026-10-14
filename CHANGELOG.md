@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.2.0](https://github.com/unif-design/react-native-icons/compare/v0.1.0...v0.2.0) (2026-10-14)
+
+
+### Features
+
+* add ToolOutlined for tool activities ([#3](https://github.com/unif-design/react-native-icons/issues/3)) ([a04cfa2](https://github.com/unif-design/react-native-icons/commit/a04cfa23ee4a89ca2c59ce7cd04cc9ee0809982b))
+
 # 0.1.0 (2026-10-11)
 
 
