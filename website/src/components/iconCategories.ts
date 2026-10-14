@@ -137,6 +137,7 @@ export const iconCategories: Record<
   'success': 'status',
   'tag': 'business',
   'thinking': 'status',
+  'tool': 'editing',
   'trash': 'editing',
   'undo': 'editing',
   'upload': 'direction',
