@@ -124,6 +124,8 @@ export { default as StorefrontTagOutlined } from './icons/StorefrontTagOutlined'
 export { default as SuccessOutlined } from './icons/SuccessOutlined';
 export { default as TagOutlined } from './icons/TagOutlined';
 export { default as ThinkingOutlined } from './icons/ThinkingOutlined';
+export { default as ThumbDownOutlined } from './icons/ThumbDownOutlined';
+export { default as ThumbUpOutlined } from './icons/ThumbUpOutlined';
 export { default as ToolOutlined } from './icons/ToolOutlined';
 export { default as TrashOutlined } from './icons/TrashOutlined';
 export { default as UndoOutlined } from './icons/UndoOutlined';
