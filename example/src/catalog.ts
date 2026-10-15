@@ -53,6 +53,9 @@ import {
   EyeOutlined,
   EyeOffOutlined,
   FileOutlined,
+  FileExcelOutlined,
+  FilePdfOutlined,
+  FileWordOutlined,
   FilterOutlined,
   FlagOutlined,
   FlashAutoOutlined,
@@ -293,6 +296,13 @@ export const iconCatalog = [
   { name: 'EyeOutlined', sourceName: 'eye', Icon: EyeOutlined },
   { name: 'EyeOffOutlined', sourceName: 'eye-off', Icon: EyeOffOutlined },
   { name: 'FileOutlined', sourceName: 'file', Icon: FileOutlined },
+  {
+    name: 'FileExcelOutlined',
+    sourceName: 'file-excel',
+    Icon: FileExcelOutlined,
+  },
+  { name: 'FilePdfOutlined', sourceName: 'file-pdf', Icon: FilePdfOutlined },
+  { name: 'FileWordOutlined', sourceName: 'file-word', Icon: FileWordOutlined },
   { name: 'FilterOutlined', sourceName: 'filter', Icon: FilterOutlined },
   { name: 'FlagOutlined', sourceName: 'flag', Icon: FlagOutlined },
   {
