@@ -53,6 +53,9 @@ export { default as ErrorAlertOutlined } from './icons/ErrorAlertOutlined';
 export { default as EyeOutlined } from './icons/EyeOutlined';
 export { default as EyeOffOutlined } from './icons/EyeOffOutlined';
 export { default as FileOutlined } from './icons/FileOutlined';
+export { default as FileExcelOutlined } from './icons/FileExcelOutlined';
+export { default as FilePdfOutlined } from './icons/FilePdfOutlined';
+export { default as FileWordOutlined } from './icons/FileWordOutlined';
 export { default as FilterOutlined } from './icons/FilterOutlined';
 export { default as FlagOutlined } from './icons/FlagOutlined';
 export { default as FlashAutoOutlined } from './icons/FlashAutoOutlined';
@@ -124,6 +127,8 @@ export { default as StorefrontTagOutlined } from './icons/StorefrontTagOutlined'
 export { default as SuccessOutlined } from './icons/SuccessOutlined';
 export { default as TagOutlined } from './icons/TagOutlined';
 export { default as ThinkingOutlined } from './icons/ThinkingOutlined';
+export { default as ThumbDownOutlined } from './icons/ThumbDownOutlined';
+export { default as ThumbUpOutlined } from './icons/ThumbUpOutlined';
 export { default as ToolOutlined } from './icons/ToolOutlined';
 export { default as TrashOutlined } from './icons/TrashOutlined';
 export { default as UndoOutlined } from './icons/UndoOutlined';

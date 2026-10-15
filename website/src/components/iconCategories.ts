@@ -14,6 +14,8 @@ export const iconCategories: Record<
   (typeof iconCatalog)[number]['sourceName'],
   keyof typeof categoryLabels
 > = {
+  'thumb-up': 'editing',
+  'thumb-down': 'editing',
   'alert': 'status',
   'app-fallback': 'general',
   'arrow-down': 'direction',
@@ -66,6 +68,9 @@ export const iconCategories: Record<
   'eye-off': 'editing',
   'eye': 'editing',
   'file': 'editing',
+  'file-word': 'editing',
+  'file-excel': 'editing',
+  'file-pdf': 'editing',
   'filter': 'editing',
   'flag': 'status',
   'flash-auto': 'media',

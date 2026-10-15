@@ -130,5 +130,10 @@
   "users-search": "UsersSearchOutlined",
   "utensils": "UtensilsOutlined",
   "visit": "VisitOutlined",
-  "warning": "WarningOutlined"
+  "warning": "WarningOutlined",
+  "thumb-up": "ThumbUpOutlined",
+  "thumb-down": "ThumbDownOutlined",
+  "file-word": "FileWordOutlined",
+  "file-excel": "FileExcelOutlined",
+  "file-pdf": "FilePdfOutlined"
 }
