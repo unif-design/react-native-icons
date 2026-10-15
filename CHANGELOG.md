@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.3.0](https://github.com/unif-design/react-native-icons/compare/v0.2.0...v0.3.0) (2026-10-15)
+
+
+### Features
+
+* add reply ratings and typed document icons ([#4](https://github.com/unif-design/react-native-icons/issues/4)) ([7e10dad](https://github.com/unif-design/react-native-icons/commit/7e10dad02b33a887108531d6ff6e756804b26ea1))
+
 # [0.2.0](https://github.com/unif-design/react-native-icons/compare/v0.1.0...v0.2.0) (2026-10-14)
 
 
