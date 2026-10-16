@@ -135,5 +135,13 @@
   "thumb-down": "ThumbDownOutlined",
   "file-word": "FileWordOutlined",
   "file-excel": "FileExcelOutlined",
-  "file-pdf": "FilePdfOutlined"
+  "file-pdf": "FilePdfOutlined",
+  "file-read": "FileReadOutlined",
+  "file-parse": "FileParseOutlined",
+  "file-write": "FileWriteOutlined",
+  "image-search": "ImageSearchOutlined",
+  "text-scan": "TextScanOutlined",
+  "globe": "GlobeOutlined",
+  "terminal": "TerminalOutlined",
+  "database-search": "DatabaseSearchOutlined"
 }
