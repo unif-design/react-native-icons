@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.1](https://github.com/unif-design/react-native-icons/compare/v0.4.0...v0.4.1) (2026-10-16)
+
+
+### Bug Fixes
+
+* accept React Native 0.88 hosts ([397a0e8](https://github.com/unif-design/react-native-icons/commit/397a0e81520182060e1557362cbd9f32be435fe9))
+
 # [0.4.0](https://github.com/unif-design/react-native-icons/compare/v0.3.0...v0.4.0) (2026-10-16)
 
 
