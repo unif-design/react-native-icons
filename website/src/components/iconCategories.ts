@@ -14,6 +14,14 @@ export const iconCategories: Record<
   (typeof iconCatalog)[number]['sourceName'],
   keyof typeof categoryLabels
 > = {
+  'file-read': 'editing',
+  'file-parse': 'editing',
+  'file-write': 'editing',
+  'image-search': 'media',
+  'text-scan': 'media',
+  'globe': 'general',
+  'terminal': 'general',
+  'database-search': 'general',
   'thumb-up': 'editing',
   'thumb-down': 'editing',
   'alert': 'status',
