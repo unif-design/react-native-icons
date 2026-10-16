@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.4.0](https://github.com/unif-design/react-native-icons/compare/v0.3.0...v0.4.0) (2026-10-16)
+
+
+### Features
+
+* add semantic activity icons ([#5](https://github.com/unif-design/react-native-icons/issues/5)) ([eb1ad5e](https://github.com/unif-design/react-native-icons/commit/eb1ad5ea20447d3818a3f47fe60535aec3313a9e))
+
 # [0.3.0](https://github.com/unif-design/react-native-icons/compare/v0.2.0...v0.3.0) (2026-10-15)
 
 
