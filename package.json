@@ -95,7 +95,7 @@
   },
   "peerDependencies": {
     "react": ">=19.2.3 <20",
-    "react-native": ">=0.86.3 <0.87",
+    "react-native": ">=0.86.3 <0.89",
     "react-native-svg": ">=15.15.5 <16"
   },
   "workspaces": [
