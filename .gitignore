@@ -88,3 +88,4 @@ nitrogen/
 .superpowers/
 coverage/
 website/.docusaurus/
+example/ios/*.xcworkspace/

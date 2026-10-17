@@ -22,6 +22,23 @@ module.exports = function rnw(context) {
         module: {
           rules: [
             {
+              // The RN compatibility registry mixes an ES import with CommonJS exports.
+              test: /\.js$/,
+              include: path.dirname(
+                require.resolve('@react-native/assets-registry/registry')
+              ),
+              use: {
+                loader: require.resolve('babel-loader'),
+                options: {
+                  babelrc: false,
+                  configFile: false,
+                  plugins: [
+                    require.resolve('@babel/plugin-transform-modules-commonjs'),
+                  ],
+                },
+              },
+            },
+            {
               test: /\.tsx?$/,
               include: library,
               use: {

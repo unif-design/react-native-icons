@@ -104,3 +104,23 @@ describe('public icon components', () => {
     ).toBeGreaterThan(0);
   });
 });
+
+test('every generated public icon renders a nonempty SVG with the requested color', async () => {
+  const icons = await import('../src');
+  for (const [name, Icon] of Object.entries(icons)) {
+    const view = await render(<Icon size={20} color="#257bba" />);
+    const svg = view.root.findByType('Svg' as React.ElementType);
+    expect(Icon.displayName).toBe(name);
+    expect(svg.props).toMatchObject({
+      width: 20,
+      height: 20,
+      color: '#257bba',
+    });
+    expect(
+      view.root.findAll((node) =>
+        ['Path', 'Circle', 'Rect'].includes(String(node.type))
+      ).length
+    ).toBeGreaterThan(0);
+    await act(async () => view.unmount());
+  }
+});
