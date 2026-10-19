@@ -24,6 +24,7 @@ export const iconCategories: Record<
   'database-search': 'general',
   'thumb-up': 'editing',
   'thumb-down': 'editing',
+  'thumb-up-down': 'editing',
   'alert': 'status',
   'app-fallback': 'general',
   'arrow-down': 'direction',

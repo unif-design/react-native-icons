@@ -25,7 +25,7 @@ describe('native icon catalog', () => {
     const input = tree.root.findByType(ReactNative.TextInput);
     expect(input.props.placeholderTextColor).toBe('#1f2937');
     expect(tree.root.findByType(ReactNative.FlatList).props.data.length).toBe(
-      145
+      146
     );
 
     await act(async () => input.props.onChangeText('SENDOUTLINED'));
