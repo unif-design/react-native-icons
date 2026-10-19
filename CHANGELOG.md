@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.5.0](https://github.com/unif-design/react-native-icons/compare/v0.4.2...v0.5.0) (2026-10-19)
+
+
+### Features
+
+* add combined rating icon ([#9](https://github.com/unif-design/react-native-icons/issues/9)) ([8477f43](https://github.com/unif-design/react-native-icons/commit/8477f43b1c0c04ab456731e206274172fc27e9ec))
+
 ## [0.4.2](https://github.com/unif-design/react-native-icons/compare/v0.4.1...v0.4.2) (2026-10-17)
 
 ## [0.4.1](https://github.com/unif-design/react-native-icons/compare/v0.4.0...v0.4.1) (2026-10-16)
