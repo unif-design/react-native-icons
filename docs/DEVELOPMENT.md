@@ -6,11 +6,15 @@
 
 首批资源及严格 SVG 校验器源自 react-native-design 4d0ac8743b6e4d49547b2890c51b2dec04423337（MIT），保留原始几何及绘制属性。新库独立后在这里维护资源；Design 消费切换须随新包发布另行交付。
 
+## 库能力技能
+
+本库使用 unif-icons 定位当前版本的公开能力、接入与排障资料。修改源码时同时采用 code-development 的库开发规则；设计、测试、审查和交付按当前阶段取得依据。应用仅消费库时可直接查公开类型和文档，无需先取得维护工作区。
+
 ## CI 标准
 
 标准仓 unif-design/.github，采用 main 提交 d91483b7bb09a4d924a592ea434f2a588cc26caa；执行 scripts/sync-repo.sh react-native-icons <本仓绝对路径>。受管 CI 文件不单仓修改。保持 .nvmrc、Yarn、Turbo、example build 及 release-it 的真实接线。官方 CLI 本次 --tools 数组选项仅采用 eslint，Jest、lefthook、release-it 的实际配置已在工程接入时补齐。
 
-本仓尚不在组织 Agent 与 llms 同步脚本的五仓名单中；AGENTS.md 为本库入口，website/scripts/llms 和公共 builder 测试原样来自同一模板修订。正式扩展自动同步应修改标准仓白名单。
+本仓已纳入组织 Agent 与 llms 同步名单；AGENTS.md 的共享区块由 sync-agent-standards.sh 维护，website/scripts/llms 与公共 builder 测试由 sync-llms.cjs 从模板同步。单独更新入口或文档工具时使用对应脚本，不运行无关的全量配置同步。
 
 ## 验证
 
@@ -21,6 +25,16 @@ SVG 使用 `15.16.0` 的正式 RN 0.87+ 资源解析修复；Website 按上游 W
 Jest 覆盖所有 `src/**/*.{ts,tsx}`（包含生成图标和保留的 CLI 示例）及 `example/src/**/*.{ts,tsx}`，四项覆盖率门禁均为 100%。生成器、SVG 解析器、打包验证器与文档工具使用各自测试，不并入运行时覆盖率。两端原生 example 仅保留官方模板宿主，没有本库自有原生模块；宿主构建与真机展示须单独验证。
 
 生成与源资源一致性、组件属性/颜色/图形、类型、打包消费、Metro bundle、网站构建和 CI 静态检查分别验证。iOS/Android 原生编译、设备、远端 CI 及 npm 发布不能互相替代。
+
+## SVG Web 版本与平台支持
+
+原生库与 example 继续使用正式 `react-native-svg@15.16.0`；Website 单独固定正式 `15.15.5`，并从 Website 的依赖解析 SVG。15.16.0 的 Android 音效依赖会进入 Webpack 的 Web 模块图（[上游问题 #3086](https://github.com/software-mansion/react-native-svg/issues/3086)）；15.15.5 的 Web 实现不包含这条依赖。该选择只影响文档站，保留原生 15.16.0 的资源解析修复。
+
+不使用 Yarn 依赖补丁或 SVG IgnorePlugin，不关闭导出警告。升级 Website 的 SVG 版本前，验证完整站点构建、SVG 图形／渐变／裁剪、点击与卸载。切换版本后先执行 `yarn workspace @unif/react-native-icons-website exec docusaurus clear`，再执行该 workspace 的 `build`，避免复用旧构建缓存。
+
+支持 Web 的组件继续通过真实 React Native Web 实现演示；只有没有 Web 实现的原生 SDK 能力提示到 iOS／Android 示例体验。构建或类型错误不能直接作为“不支持 Web”的判断依据。RN 整库类型改造已停止，本仓未应用 RN 源码或类型补丁。
+
+`node --test scripts/svg-web.test.cjs` 通过实际站点插件打包 SVG，断言无导出警告、无 Android 音效模块，并验证 SVG／Defs／渐变／圆形的真实 SSR 输出；该回归纳入常规 `yarn test`。浏览器和真机验证仍须分别记录。
 
 ## 官网样式
 

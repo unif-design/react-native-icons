@@ -14,7 +14,9 @@ module.exports = function rnw(context) {
             // A workspace library must share the website's React runtime.
             'react': path.dirname(require.resolve('react/package.json')),
             'react-native-svg': path.dirname(
-              require.resolve('react-native-svg/package.json')
+              require.resolve('react-native-svg/package.json', {
+                paths: [context.siteDir],
+              })
             ),
           },
           extensions: ['.web.js', '.web.ts', '.web.tsx', '.ts', '.tsx'],

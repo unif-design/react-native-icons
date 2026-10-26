@@ -1,10 +1,23 @@
 # react-native-icons 开发入口
 
-使用中文交流。使用 unif-portal-dev-skills 的 code-development，设计、测试、审查、交付按阶段使用同插件技能。实现与验证入口见 [开发资料](docs/DEVELOPMENT.md)。
+<!-- BEGIN UNIF REACT NATIVE STANDARD -->
+
+## 开发入口
+
+本仓库为 `react-native-icons`，使用 `unif-portal-dev-skills` 的共用研发规范与库能力技能。
+
+- 本库能力的使用、维护和排障使用 `unif-portal-dev-skills:unif-icons`，只读取当前任务相关资料。
+- 实际开发和修改源码时使用 `unif-portal-dev-skills:code-development`；单纯接口查询不启动开发阶段。
+- 设计、测试、审查、交付分别使用同插件的 architecture-design、code-testing、code-review、code-delivery，按需读取所属专题。
+- 项目设计、规范来源及实现入口见[开发资料](docs/DEVELOPMENT.md)。
+
+<!-- END UNIF REACT NATIVE STANDARD -->
+
+使用中文交流。
 
 图标名称采用 Outlined / Filled 等实际风格后缀。SVG 是源资源；不手改生成的图标文件。不引入 Design 主题或业务依赖。
 
-CI 标准来自 unif-design/.github；受管文件通过组织 sync-repo.sh 同步，不单仓修改。新库尚未进入组织 Agent 与 llms 同步脚本白名单，扩展同步范围需在标准仓处理。
+CI 标准来自 unif-design/.github；受管文件通过组织同步脚本维护，不单仓修改。Agent 入口与 llms 公共生成实现已纳入共享同步名单。
 
 <!-- BEGIN:turborepo-agent-rules -->
 

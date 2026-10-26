@@ -19,5 +19,12 @@
     "slug": "/getting-started",
     "section": "概览",
     "description": null
+  },
+  {
+    "title": "库能力与研发技能",
+    "mdPath": "md/skills.md",
+    "slug": "/skills",
+    "section": "概览",
+    "description": "Unif Icons 的公开使用、源码维护与按需资料入口。"
   }
 ]
