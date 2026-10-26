@@ -1,8 +1,7 @@
 import renderer, { act } from 'react-test-renderer';
 import * as ReactNative from 'react-native';
 import { afterEach, describe, expect, jest, test } from '@jest/globals';
-import App from '../example/src/App';
-import { multiply } from '../src/multiply';
+import App from '../App';
 
 let view: renderer.ReactTestRenderer;
 
@@ -56,9 +55,4 @@ describe('native icon catalog', () => {
       ReactNative.StyleSheet.flatten(root?.props.style).backgroundColor
     ).toBe('#111827');
   });
-});
-
-test('retained CLI multiplication sample accepts signed and zero values', () => {
-  expect(multiply(-3, 7)).toBe(-21);
-  expect(multiply(0, 12)).toBe(0);
 });

@@ -82,6 +82,18 @@ You've successfully run and modified your React Native App. :partying_face:
 - If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
 - If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
 
+## Verification
+
+Run these commands from the repository root:
+
+```sh
+yarn typecheck
+yarn test --runInBand --runTestsByPath example/src/__tests__/App.test.tsx
+yarn test:native
+```
+
+The catalog interaction tests live in `src/__tests__`; native host assertions and boundary doubles live in `android/__tests__` and `ios/__tests__`. See [native host verification](NATIVE_TESTS.md) for requirements, coverage inventory and integration boundaries.
+
 # Troubleshooting
 
 If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
