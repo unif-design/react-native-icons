@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.1](https://github.com/unif-design/react-native-icons/compare/v0.5.0...v0.5.1) (2026-10-26)
+
+
+### Bug Fixes
+
+* preserve svg web demos and document library skills ([#10](https://github.com/unif-design/react-native-icons/issues/10)) ([e59c3bf](https://github.com/unif-design/react-native-icons/commit/e59c3bf024627e09e10ae6ce104c6189c43de77e))
+
 # [0.5.0](https://github.com/unif-design/react-native-icons/compare/v0.4.2...v0.5.0) (2026-10-19)
 
 
