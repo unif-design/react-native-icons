@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.3](https://github.com/unif-design/react-native-icons/compare/v0.5.2...v0.5.3) (2026-10-27)
+
+
+### Bug Fixes
+
+* **docs:** align ios setup and release indexes ([193e11f](https://github.com/unif-design/react-native-icons/commit/193e11f0f91ca0bfd2ff26fee1c80a2b072fb7ab))
+
 ## [0.5.2](https://github.com/unif-design/react-native-icons/compare/v0.5.1...v0.5.2) (2026-10-26)
 
 ## [0.5.1](https://github.com/unif-design/react-native-icons/compare/v0.5.0...v0.5.1) (2026-10-26)
