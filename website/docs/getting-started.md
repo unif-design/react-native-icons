@@ -10,7 +10,7 @@ title: 安装与使用
 yarn add @unif/react-native-icons react-native-svg
 ```
 
-宿主需要接入 `react-native-svg`。裸 RN iOS 首次安装原生依赖后，在应用目录执行 `bundle exec pod install` 并重建应用。Expo 项目使用 `npx expo install react-native-svg` 选择宿主兼容版本。
+宿主需要接入 `react-native-svg`。裸 RN iOS 首次安装原生依赖后，在含 `Gemfile` 的应用目录执行 `bundle install`，再执行 `bundle exec pod install --project-directory=ios` 并重建应用。后续更新原生依赖时也需重新执行 pod install。Expo 项目使用 `npx expo install react-native-svg` 选择宿主兼容版本。
 
 ```tsx
 import { SendOutlined, StarFilled } from '@unif/react-native-icons';

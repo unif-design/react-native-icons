@@ -8,7 +8,7 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 First, you will need to run **Metro**, the JavaScript build tool for React Native.
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+To start the Metro dev server, run the following command from `example/`, the React Native app root:
 
 ```sh
 # Using npm
@@ -20,7 +20,7 @@ yarn start
 
 ## Step 2: Build and run your app
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+With Metro running, open a new terminal window/pane in `example/`, and use one of the following commands to build and run your Android or iOS app:
 
 ### Android
 
@@ -36,16 +36,16 @@ yarn android
 
 For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+From `example/` (where `Gemfile` lives), run the Ruby bundler to install CocoaPods itself on the first setup:
 
 ```sh
 bundle install
 ```
 
-Then, and every time you update your native dependencies, run:
+Then, and every time you update your native dependencies, stay in `example/` and point CocoaPods at its `ios/` directory:
 
 ```sh
-bundle exec pod install
+bundle exec pod install --project-directory=ios
 ```
 
 For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
