@@ -83,7 +83,7 @@ import SendOutlined from '@unif/react-native-icons/SendOutlined';
 
 发布包含编译后的 JS 和类型。使用已有图标无需运行生成脚本，也无需配置 SVG transformer。命名导入的最终包体积取决于构建器；子路径组件自身不会引入全量图标目录。
 
-首批基线为 React 19.2.3、React Native 0.86.3、react-native-svg 15.15.5；其他版本不因纯 JS 实现而自动视为已验证。Web 使用 react-native-web 和 react-native-svg 的 Web 实现；完整实例见本站。
+本仓开发基线为 React 19.3.0、React Native 0.88.0、react-native-svg 15.16.0；支持范围以 `package.json#peerDependencies` 为准，其他组合需分别验证。Web 使用 react-native-web 和 react-native-svg 的 Web 实现；完整实例见本站。
 
 ## 库能力与研发技能
 
