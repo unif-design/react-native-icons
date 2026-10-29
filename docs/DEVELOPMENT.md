@@ -6,6 +6,27 @@
 
 首批资源及严格 SVG 校验器源自 react-native-design 4d0ac8743b6e4d49547b2890c51b2dec04423337（MIT），保留原始几何及绘制属性。新库独立后在这里维护资源；Design 消费切换须随新包发布另行交付。
 
+## 同源生成与跨仓校验
+
+`src/svg/` 与 `scripts/icon-manifest.json` 同时服务 RN 和纯 ArkUI Icons。`build-icons.cjs` 默认生成 RN；`--target harmony` 调用鸿蒙生成器，仅更新目标仓的图形数据、命名组件、公开入口、示例清单和溯源资源。手写 ArkUI 渲染器、工程配置及业务组件保持各自归属。
+
+图形、清单或生成规则变化后，在本仓执行：
+
+```sh
+yarn generate
+node scripts/build-icons.cjs --target harmony --output ../harmony-icons
+yarn check:icons:all --harmony-root ../harmony-icons
+node --test scripts/build-icons.test.cjs scripts/build-harmony-icons.test.cjs
+```
+
+路径按实际工作区传入；`check:icons:all` 只读检查两个真实目标，缺少鸿蒙仓会失败，不下载仓库、不自动生成或跳过。生成完成后审查差异；仅 RN 参数、渲染或无障碍行为变化，仍需按契约核对另一端，不用 SVG 生成替代原生实现。普通图标消费不执行生成。
+
+鸿蒙 `icon-provenance.json` 记录生成时的源提交及 SVG／清单／生成器摘要。只读检查允许提交号因文档提交或等价合并而不同，内容摘要与实际生成文件必须一致。提交号是源码定位依据；内容是否一致由摘要和完整产物比较判定。
+
+RN main 是功能与图形基线，鸿蒙跟进 RN；两端版本号对齐所采用的 RN Icons 版本。RN 的现有 CI 通过 `yarn test` 执行生成器回归，不依赖鸿蒙 main 的进度。鸿蒙仓的专属检查读取 RN main，核对其实际生成产物；这些检查不提交或发布。
+
+鸿蒙升级先核对 RN main 的当前行为与版本，再固定本次对齐的具体提交，生成、检查和构建 HAR。提交号用于复现来源，不能把资源一致当成平台行为已验收。RN PR 可独立提交；RN 合并后再更新鸿蒙来源与产物。单端任务或目标仓缺失时报告待同步范围，不把单端检查结果扩展成双端完成。
+
 ## 库能力技能
 
 本库使用 unif-icons 定位当前版本的公开能力、接入与排障资料。修改源码时同时采用 code-development 的库开发规则；设计、测试、审查和交付按当前阶段取得依据。应用仅消费库时可直接查公开类型和文档，无需先取得维护工作区。

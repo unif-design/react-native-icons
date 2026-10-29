@@ -39,7 +39,8 @@
     "release": "release-it --only-version",
     "website": "yarn workspace @unif/react-native-icons-website",
     "verify:package": "node scripts/verify-package.cjs",
-    "test:native": "python3 scripts/test-native-hosts.py"
+    "test:native": "python3 scripts/test-native-hosts.py",
+    "check:icons:all": "node scripts/check-icon-targets.cjs"
   },
   "keywords": [
     "react-native",

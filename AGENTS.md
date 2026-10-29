@@ -17,6 +17,8 @@
 
 图标名称采用 Outlined / Filled 等实际风格后缀。SVG 是源资源；不手改生成的图标文件。不引入 Design 主题或业务依赖。
 
+维护图形、清单或生成规则时，读取[同源生成](docs/DEVELOPMENT.md#同源生成与跨仓校验)，核对 RN 与鸿蒙目标。目标缺失或只获单端授权时报告待同步范围，不把 RN 检查通过当成两端完成。
+
 CI 标准来自 unif-design/.github；受管文件通过组织同步脚本维护，不单仓修改。Agent 入口与 llms 公共生成实现已纳入共享同步名单。
 
 <!-- BEGIN:turborepo-agent-rules -->
