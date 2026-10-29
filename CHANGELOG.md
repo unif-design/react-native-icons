@@ -1,5 +1,7 @@
 # Changelog
 
+## [0.5.5](https://github.com/unif-design/react-native-icons/compare/v0.5.4...v0.5.5) (2026-10-29)
+
 ## [0.5.4](https://github.com/unif-design/react-native-icons/compare/v0.5.3...v0.5.4) (2026-10-29)
 
 ## [0.5.3](https://github.com/unif-design/react-native-icons/compare/v0.5.2...v0.5.3) (2026-10-27)
