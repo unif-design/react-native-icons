@@ -48,4 +48,4 @@ yarn website start
 
 官方 `create-react-native-library` 工程结构保留。CI 来自 `unif-design/.github` 模板，详见 [开发资料](docs/DEVELOPMENT.md)。远端分支检查、release bot、npm Trusted Publisher 与发布在正式交付时分别核对。
 
-资源和严格 SVG 校验器首批来自 `@unif/react-native-design`，遵循 MIT。库消费迁移在发布后单独接入。
+图标资源与 SVG 校验器遵循 MIT 许可。图标名称、参数和公开导出见[使用文档](https://unif-design.github.io/react-native-icons/docs/api)。
