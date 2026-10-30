@@ -1,90 +1,33 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Icons 原生示例
 
-# Getting Started
+使用本库公开组件展示图标目录，支持按组件名或 SVG 名称搜索，并跟随系统浅色／深色主题。应用入口为 [`src/App.tsx`](src/App.tsx)，图标清单由库生成器维护。
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+工程基于 React Native Community CLI；运行前准备 Android 或 iOS 开发环境。原生示例使用 React 19.3.0、RN 0.88.0 和 react-native-svg 15.16.0，依赖声明见 [package.json](package.json)。
 
-## Step 1: Start Metro
+## 安装与运行
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
-
-To start the Metro dev server, run the following command from `example/`, the React Native app root:
+在仓库根目录安装依赖并生成图标：
 
 ```sh
-# Using npm
-npm start
-
-# OR using Yarn
-yarn start
+yarn install --immutable
+yarn generate
+yarn example start
 ```
 
-## Step 2: Build and run your app
+保留 Metro 运行，在另一终端从仓库根目录执行 `yarn example android` 或 `yarn example ios`。
 
-With Metro running, open a new terminal window/pane in `example/`, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-From `example/` (where `Gemfile` lives), run the Ruby bundler to install CocoaPods itself on the first setup:
+iOS 首次安装或更新原生依赖后，先在 `example/` 执行：
 
 ```sh
 bundle install
-```
-
-Then, and every time you update your native dependencies, stay in `example/` and point CocoaPods at its `ios/` directory:
-
-```sh
 bundle exec pod install --project-directory=ios
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+示例通过 workspace 消费当前库源码。修改 JS 后可由 Fast Refresh 更新；原生依赖和宿主配置变化后重新构建。无需修改 `src/catalog.ts`，新增图标的步骤见[维护图标](../CONTRIBUTING.md)。
 
-```sh
-# Using npm
-npm run ios
+## 检查
 
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
-
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-## Verification
-
-Run these commands from the repository root:
+从仓库根目录执行：
 
 ```sh
 yarn typecheck
@@ -92,18 +35,6 @@ yarn test --runInBand --runTestsByPath example/src/__tests__/App.test.tsx
 yarn test:native
 ```
 
-The catalog interaction tests live in `src/__tests__`; native host assertions and boundary doubles live in `android/__tests__` and `ios/__tests__`. See [native host verification](NATIVE_TESTS.md) for requirements, coverage inventory and integration boundaries.
+界面测试位于 `src/__tests__/`，原生宿主断言和边界替身位于 `android/__tests__/` 与 `ios/__tests__/`。`test:native` 的工具前置、输出与限制见[原生宿主验证](NATIVE_TESTS.md)。
 
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+运行应用时检查全部图标、搜索与空结果、浅色／深色和辅助功能。界面测试、原生宿主测试或一次编译均不能代替 iOS／Android 设备呈现；网站的 Web 图标也需单独检查。

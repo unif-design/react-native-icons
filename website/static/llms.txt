@@ -1,6 +1,6 @@
 # Unif Icons
 
-> Unif React Native SVG icon components
+> React Native SVG 图标组件，支持命名导入、独立入口和尺寸颜色调整
 
 文档构建依据：`@unif/react-native-icons@0.5.5`；使用时核对实际安装版本。
 

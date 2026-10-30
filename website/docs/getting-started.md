@@ -15,8 +15,14 @@ yarn add @unif/react-native-icons react-native-svg
 ```tsx
 import { SendOutlined, StarFilled } from '@unif/react-native-icons';
 
-<SendOutlined size={20} color="#1677ff" />
-<StarFilled size={24} color="#faad14" />
+export function ExampleIcons() {
+  return (
+    <>
+      <SendOutlined size={20} color="#1677ff" />
+      <StarFilled size={24} color="#faad14" />
+    </>
+  );
+}
 ```
 
 需要明确限定导入模块时，使用正式子路径：
