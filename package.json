@@ -1,7 +1,7 @@
 {
   "name": "@unif/react-native-icons",
   "version": "0.5.5",
-  "description": "Unif React Native SVG icon components",
+  "description": "React Native SVG 图标组件，支持命名导入、独立入口和尺寸颜色调整",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
   "exports": {

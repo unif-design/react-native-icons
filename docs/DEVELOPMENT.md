@@ -4,7 +4,7 @@
 
 保持官方 CLI 生成的工程结构，在其基础上实现图标、示例和必要接线。源 SVG 位于 src/svg，公开名称由 scripts/icon-manifest.json 明确指定，生成文件位于 src/icons 与 src/index.tsx。维护后运行 yarn generate；业务消费者不执行生成脚本。
 
-首批资源及严格 SVG 校验器源自 react-native-design 4d0ac8743b6e4d49547b2890c51b2dec04423337（MIT），保留原始几何及绘制属性。新库独立后在这里维护资源；Design 消费切换须随新包发布另行交付。
+首批资源及严格 SVG 校验器源自 react-native-design 4d0ac8743b6e4d49547b2890c51b2dec04423337（MIT），保留原始几何及绘制属性。独立后在本仓维护资源；应用与组件库通过公开 npm 入口消费。
 
 ## 同源生成与跨仓校验
 
@@ -29,7 +29,9 @@ RN main 是功能与图形基线，鸿蒙跟进 RN；两端版本号对齐所采
 
 ## 库能力技能
 
-本库使用 unif-icons 定位当前版本的公开能力、接入与排障资料。修改源码时同时采用 code-development 的库开发规则；设计、测试、审查和交付按当前阶段取得依据。应用仅消费库时可直接查公开类型和文档，无需先取得维护工作区。
+使用 `unif-portal-dev-skills:unif-icons` 定位当前版本的公开能力、接入与排障资料。应用仅消费库时可直接查公开类型和文档，无需先取得维护工作区。
+
+通用规范使用 `uni-skills`：`code-organization` 说明目录与文件组织，`react-native-development` 说明 RN 实现要求，`react-native-library` 说明独立库与消费者验证，`documentation` 说明文档与文档站维护。Unif 的设计、测试、审查和交付按 `unif-portal-dev-skills` 对应技能执行；本库接口与行为以公开类型和有效契约为准。
 
 ## CI 标准
 

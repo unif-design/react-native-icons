@@ -50,6 +50,8 @@ SVG 保持原始 path/circle/rect、实心细节和透明度。公开组件不�
 5. 在 `website/src/components/iconCategories.ts` 为新增图标登记用途分类。每个图标只属于一类；网站类型检查会提示遗漏的分类。
 6. 运行 `yarn lint`、`yarn typecheck`、`yarn test --maxWorkers=2 --coverage`、`yarn prepare`、`yarn verify:package`、`yarn website typecheck` 与 `yarn website build`。
 
+SVG 和名称也供鸿蒙图标库使用；修改后按[同源生成与跨仓校验](https://github.com/unif-design/react-native-icons/blob/main/docs/DEVELOPMENT.md#同源生成与跨仓校验)核对两个目标，只在已授权的目标仓生成。
+
 生成器先完整校验所有输入；存在非法 SVG、名称冲突或清单不一致时不写生成文件。`yarn check:icons` 只读检查已生成文件是否一致。不要手改自动生成的组件或消费者清单。
 
 原生示例使用官方 Community CLI：`yarn example ios`、`yarn example android`。CI、版本、发布和文档部署来自组织 `.github` 模板。远端首次接入还需 release bot、分支检查和 npm Trusted Publisher 配置；本地构建通过不表示包已发布。
@@ -71,8 +73,14 @@ yarn add @unif/react-native-icons react-native-svg
 ```tsx
 import { SendOutlined, StarFilled } from '@unif/react-native-icons';
 
-<SendOutlined size={20} color="#1677ff" />
-<StarFilled size={24} color="#faad14" />
+export function ExampleIcons() {
+  return (
+    <>
+      <SendOutlined size={20} color="#1677ff" />
+      <StarFilled size={24} color="#faad14" />
+    </>
+  );
+}
 ```
 
 需要明确限定导入模块时，使用正式子路径：
@@ -102,12 +110,14 @@ import SendOutlined from '@unif/react-native-icons/SendOutlined';
    ```
 
    按提示选择目标工具。也可将获授权分发的 `skills/unif-icons/` 完整复制到目标工具的技能目录，保留 `SKILL.md`、`references/`、`agents/` 及已有文件，不要只复制入口文件。
+
 2. **完整插件（可选）**：需要共用研发规范和多个库能力时，按[技能仓安装说明](https://github.com/unif-skill/unif-portal-dev-skills#安装与使用)安装 `unif-portal-dev-skills`。
 
 技能源仓目前为私有仓库；直接从源仓获取技能需要访问权限及 Git 认证。已获授权分发的完整单技能目录可以独立使用；安装位置与识别方式以目标工具文档为准。
 
 - **使用本库**：从 `unif-icons` 定位公开 API、示例和必要的接入/生命周期约束，核对应用实际采用版本。
-- **修改库源码**：采用工程指定的规范，按本仓开发资料定位源码、契约和真实消费者。
+- **修改库源码**：采用 `uni-skills` 的 `code-organization`、`react-native-development` 和 `react-native-library`，按[本仓开发资料](https://github.com/unif-design/react-native-icons/blob/main/docs/DEVELOPMENT.md)定位源码、契约和真实消费者。
+- **维护文档**：使用 `uni-skills` 的 `documentation`，核对公开类型、生成来源与页面结果。
 - **设计、测试、审查与交付**：沿用工程的对应规则；已配置共用阶段技能时按需使用，同一任务复用已有有效依据。
 
 涉及其他自有库时按需查对应公开资料，已安装的能力技能可辅助定位。准确接口以采用版本的公开类型与文档为准；[LLM 文档索引](https://unif-design.github.io/react-native-icons/llms.txt) 声明构建版本，官网新能力不能直接当作旧依赖已支持。
