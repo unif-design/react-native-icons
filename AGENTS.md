@@ -1,21 +1,16 @@
 # react-native-icons 开发入口
 
-<!-- BEGIN UNIF REACT NATIVE STANDARD -->
+<!-- BEGIN GITHUB DELIVERY STANDARD -->
 
 ## 开发入口
 
-本仓库为 `react-native-icons`，通用工程规范使用 `uni-skills`，项目约定与库能力使用 `unif-portal-dev-skills`。
+本库为 `@unif/react-native-icons`（仓库 `react-native-icons`）。
 
-- 本库能力的使用、维护和排障使用 `unif-portal-dev-skills:unif-icons`，只读取当前任务相关资料。
-- 目录、文件职责、命名与公共入口使用 `code-organization`。
-- React Native 组件、Hook、样式与平台实现使用 `react-native-development`。
-- 库创建、维护、打包、发布及运行示例使用 `react-native-library`。
-- 文档编写、文档站与生成构建使用 `documentation`。
-- 实际开发和修改源码时使用 `unif-portal-dev-skills:code-development`；单纯接口查询不启动开发阶段。
-- 设计、测试、审查、交付分别使用同插件的 architecture-design、code-testing、code-review、code-delivery，按需读取所属专题。
-- 项目设计、规范来源及实现入口见[开发资料](docs/DEVELOPMENT.md)。
+按当前任务选择适用且已安装的技能；项目约定与库能力以本仓库的实际文档和源码为准。
 
-<!-- END UNIF REACT NATIVE STANDARD -->
+项目设计、约定和实现入口见[开发资料](docs/DEVELOPMENT.md)。
+
+<!-- END GITHUB DELIVERY STANDARD -->
 
 使用中文交流。
 
@@ -23,7 +18,7 @@
 
 维护图形、清单或生成规则时，读取[同源生成](docs/DEVELOPMENT.md#同源生成与跨仓校验)，核对 RN 与鸿蒙目标。目标缺失或只获单端授权时报告待同步范围，不把 RN 检查通过当成两端完成。
 
-CI 标准来自 unif-design/.github；受管文件通过组织同步脚本维护，不单仓修改。Agent 入口与 llms 公共生成实现已纳入共享同步名单。
+共享交付文件由 `github-delivery` 的模板和工具维护，Unif 组织值落实为本库 `.github/organization.json`；受管文件通过技能提供的同步工具维护。项目检查与配置入口见[交付配置与检查](docs/DEVELOPMENT.md#交付配置与检查)。
 
 <!-- BEGIN:turborepo-agent-rules -->
 
