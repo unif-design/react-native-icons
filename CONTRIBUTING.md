@@ -28,4 +28,4 @@ yarn website build
 
 调整公开 API 或既有实现行为前，先通过 issue 与维护者确认范围；已获授权的任务按确认范围执行。提交与 PR 标题、正文使用中文，保留 Conventional Commits 类型前缀。公开 API 变化同步类型、文档和消费者；提交前检查完整差异，保留无关工作区修改。
 
-CI 与发布配置来自 `unif-design/.github`，使用组织 PR、发布机器人和 npm Trusted Publisher 流程；受管文件通过组织同步脚本维护。具体交付以当前任务授权为准。
+CI 与发布配置由 `github-delivery` 的模板和工具维护，Unif 组织值落实为本库 `.github/organization.json`；检查入口见[交付配置与检查](docs/DEVELOPMENT.md#交付配置与检查)。正式发行沿用本库 PR、发布机器人和 npm Trusted Publisher 流程，具体交付以当前任务授权为准。

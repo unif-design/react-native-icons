@@ -35,9 +35,9 @@ RN main 是功能与图形基线，鸿蒙跟进 RN；两端版本号对齐所采
 
 ## CI 标准
 
-标准仓 unif-design/.github，采用 main 提交 d91483b7bb09a4d924a592ea434f2a588cc26caa；执行 scripts/sync-repo.sh react-native-icons <本仓绝对路径>。受管 CI 文件不单仓修改。保持 .nvmrc、Yarn、Turbo、example build 及 release-it 的真实接线。官方 CLI 本次 --tools 数组选项仅采用 eslint，Jest、lefthook、release-it 的实际配置已在工程接入时补齐。
+初始工程接入采用组织标准修订 `d91483b7bb09a4d924a592ea434f2a588cc26caa`；当前维护来源与检查见[交付配置与检查](#交付配置与检查)。受管 CI 文件从来源更新并同步。保持 .nvmrc、Yarn、Turbo、example build 及 release-it 的真实接线。官方 CLI 本次 --tools 数组选项仅采用 eslint，Jest、lefthook、release-it 的实际配置已在工程接入时补齐。
 
-本仓已纳入组织 Agent 与 llms 同步名单；AGENTS.md 的共享区块由 sync-agent-standards.sh 维护，website/scripts/llms 与公共 builder 测试由 sync-llms.cjs 从模板同步。单独更新入口或文档工具时使用对应脚本，不运行无关的全量配置同步。
+`AGENTS.md` 共享区块、`website/scripts/llms` 与公共 builder 测试由 `github-delivery` 提供的同步工具维护，LLM 维护源为该技能的 `templates/llms`。单独更新入口或文档工具时使用对应同步工具；本库通过 `node website/scripts/build-llms.js` 生成资料。
 
 ## 验证
 
@@ -68,3 +68,18 @@ Jest 覆盖所有 `src/**/*.{ts,tsx}`（包含生成图标和保留的 CLI 示�
 iOS example 使用 Ruby 3.3+，`example/Gemfile.lock` 固定 CocoaPods 1.17.0、ActiveSupport 7.2.4 与 xcodeproj 1.28.1；在 `example/` 执行 `bundle install`，再到 `example/ios/` 执行 `bundle exec pod install --deployment`。提交的 Podfile.lock 与实际 RN 0.88 构建一致。该组合已通过真实 iOS 设备 SDK 的无签名 Debug 编译；Android example 的 `:app:assembleDebug -PreactNativeArchitectures=arm64-v8a` 已通过。设备安装、交互和远端 CI 另行验收。
 
 `yarn test:native` 直接插桩 example 的两个 Kotlin 文件以及 AppDelegate／SceneDelegate 原始 Swift 文件，分别执行 Swift Debug 和 Release。测试替换外部 RN／UIKit 接口，断言宿主启动、依赖与窗口接线、场景筛选、链接转发及资源查找；Android 断言宿主延迟创建和 Fabric 开关。脚本校验完整源码清单与哈希，输出各工具原始报告；编译器没有产生的分支计数标为 N/A。JaCoCo 0.8.13 从官方 Maven 获取并核对固定 SHA256，可通过 `JACOCO_HOME` 复用同版本已校验缓存。宿主行为覆盖与真实 SDK 编译分别执行。
+
+## 交付配置与检查
+
+共享 CI、发布配置和检查工具由 `github-delivery` 的模板与工具维护。Unif 组织值由 `code-delivery` 的 `assets/organization.json` 维护，接入时落实为本库 `.github/organization.json`，记录组织、包名规则、Pages 地址、发布 App 身份及远端设置。工具运行时读取项目文件，不依赖其他技能的安装目录；适用技能按当前任务独立选择。
+
+在仓库根目录按阶段执行：
+
+| 命令 | 检查范围 |
+| --- | --- |
+| `node .github/scripts/check-delivery.cjs` | 离线检查受管文件、组织配置与 source 元数据。 |
+| `node .github/scripts/check-library.cjs pack` | 完成库构建后，检查当前 tarball 的导出、声明与文件清单。 |
+| `node .github/scripts/check-library.cjs release` | 发行前校验 README、许可和发布配置，不执行发布。 |
+| `node .github/scripts/check-library.cjs published` | 联网核验 npm 当前版本的元数据、下载完整性与实际 tarball。 |
+
+CI 与发布步骤见本库 `.github/workflows/`，组织配置调整以项目文件及当前授权为准。本地检查、远端 CI、npm 发布、文档部署和设备验收分别报告。
