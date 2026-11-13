@@ -29,7 +29,7 @@ RN main 是功能与图形基线，鸿蒙跟进 RN；两端版本号对齐所采
 
 ## 库能力技能
 
-使用 `unif-portal-dev-skills:unif-icons` 定位当前版本的公开能力、接入与排障资料。应用仅消费库时可直接查公开类型和文档，无需先取得维护工作区。
+使用 `unif-icons` 定位当前版本的公开能力、接入与排障资料。应用仅消费库时可直接查公开类型和文档，无需先取得维护工作区。
 
 通用规范使用 `uni-skills`：`uni-code-organization` 说明目录与文件组织，`uni-rn-dev` 说明 RN 实现要求，`uni-rn-library` 说明独立库与消费者验证，`uni-documentation` 说明文档与文档站维护。Unif 的设计、测试、审查和交付按 `unif-portal-dev-skills` 对应技能执行；本库接口与行为以公开类型和有效契约为准。
 
