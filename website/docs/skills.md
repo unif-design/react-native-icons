@@ -5,7 +5,7 @@ description: 'Unif Icons 的公开使用、源码维护与按需资料入口。'
 
 # 库能力与研发技能
 
-`unif-icons` 可单独安装，用于本库能力的使用、维护和排障，无需安装整个 `unif-portal-dev-skills` 插件或其他技能。安装 npm 包无需安装技能；技能也不进入产品运行时模型上下文。
+`unif-icons` 可单独安装，用于本库能力的使用、维护和排障。安装 npm 包无需安装技能；技能也不进入产品运行时模型上下文。
 
 按需选择一种分发方式：
 
@@ -17,13 +17,13 @@ description: 'Unif Icons 的公开使用、源码维护与按需资料入口。'
 
    按提示选择目标工具。也可将获授权分发的 `skills/unif-icons/` 完整复制到目标工具的技能目录，保留 `SKILL.md`、`references/`、`agents/` 及已有文件，不要只复制入口文件。
 
-2. **完整插件（可选）**：需要共用研发规范和多个库能力时，按[技能仓安装说明](https://github.com/unif-skill/unif-portal-dev-skills#安装与使用)安装 `unif-portal-dev-skills`。
+2. 在 Codex 中同时使用多个库能力时，从 `unif-portal-dev-skills` 市场安装 `unif-library-skills` 插件。阶段技能按任务另选。[技能仓安装说明](https://github.com/unif-skill/unif-portal-dev-skills#安装与使用)
 
 技能源仓目前为私有仓库；直接从源仓获取技能需要访问权限及 Git 认证。已获授权分发的完整单技能目录可以独立使用；安装位置与识别方式以目标工具文档为准。
 
 - **使用本库**：从 `unif-icons` 定位公开 API、示例和必要的接入/生命周期约束，核对应用实际采用版本。
-- **修改库源码**：采用 `uni-skills` 的 `code-organization`、`react-native-development` 和 `react-native-library`，按[本仓开发资料](https://github.com/unif-design/react-native-icons/blob/main/docs/DEVELOPMENT.md)定位源码、契约和真实消费者。
-- **维护文档**：使用 `uni-skills` 的 `documentation`，核对公开类型、生成来源与页面结果。
+- **修改库源码**：采用 `uni-skills` 的 `uni-code-organization`、`uni-rn-dev` 和 `uni-rn-library`，按[本仓开发资料](https://github.com/unif-design/react-native-icons/blob/main/docs/DEVELOPMENT.md)定位源码、契约和真实消费者。
+- **维护文档**：使用 `uni-skills` 的 `uni-documentation`，核对公开类型、生成来源与页面结果。
 - **设计、测试、审查与交付**：沿用工程的对应规则；已配置共用阶段技能时按需使用，同一任务复用已有有效依据。
 
 涉及其他自有库时按需查对应公开资料，已安装的能力技能可辅助定位。准确接口以采用版本的公开类型与文档为准；[LLM 文档索引](https://unif-design.github.io/react-native-icons/llms.txt) 声明构建版本，官网新能力不能直接当作旧依赖已支持。

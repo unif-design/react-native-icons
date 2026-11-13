@@ -18,7 +18,7 @@
 
 维护图形、清单或生成规则时，读取[同源生成](docs/DEVELOPMENT.md#同源生成与跨仓校验)，核对 RN 与鸿蒙目标。目标缺失或只获单端授权时报告待同步范围，不把 RN 检查通过当成两端完成。
 
-共享交付文件由 `github-delivery` 的模板和工具维护，Unif 组织值落实为本库 `.github/organization.json`；受管文件通过技能提供的同步工具维护。项目检查与配置入口见[交付配置与检查](docs/DEVELOPMENT.md#交付配置与检查)。
+共享交付文件由 `uni-github-delivery` 的模板和工具维护，Unif 组织值落实为本库 `.github/organization.json`；受管文件通过技能提供的同步工具维护。项目检查与配置入口见[交付配置与检查](docs/DEVELOPMENT.md#交付配置与检查)。
 
 <!-- BEGIN:turborepo-agent-rules -->
 

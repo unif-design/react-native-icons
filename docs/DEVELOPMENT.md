@@ -31,13 +31,13 @@ RN main 是功能与图形基线，鸿蒙跟进 RN；两端版本号对齐所采
 
 使用 `unif-portal-dev-skills:unif-icons` 定位当前版本的公开能力、接入与排障资料。应用仅消费库时可直接查公开类型和文档，无需先取得维护工作区。
 
-通用规范使用 `uni-skills`：`code-organization` 说明目录与文件组织，`react-native-development` 说明 RN 实现要求，`react-native-library` 说明独立库与消费者验证，`documentation` 说明文档与文档站维护。Unif 的设计、测试、审查和交付按 `unif-portal-dev-skills` 对应技能执行；本库接口与行为以公开类型和有效契约为准。
+通用规范使用 `uni-skills`：`uni-code-organization` 说明目录与文件组织，`uni-rn-dev` 说明 RN 实现要求，`uni-rn-library` 说明独立库与消费者验证，`uni-documentation` 说明文档与文档站维护。Unif 的设计、测试、审查和交付按 `unif-portal-dev-skills` 对应技能执行；本库接口与行为以公开类型和有效契约为准。
 
 ## CI 标准
 
 初始工程接入采用组织标准修订 `d91483b7bb09a4d924a592ea434f2a588cc26caa`；当前维护来源与检查见[交付配置与检查](#交付配置与检查)。受管 CI 文件从来源更新并同步。保持 .nvmrc、Yarn、Turbo、example build 及 release-it 的真实接线。官方 CLI 本次 --tools 数组选项仅采用 eslint，Jest、lefthook、release-it 的实际配置已在工程接入时补齐。
 
-`AGENTS.md` 共享区块、`website/scripts/llms` 与公共 builder 测试由 `github-delivery` 提供的同步工具维护，LLM 维护源为该技能的 `templates/llms`。单独更新入口或文档工具时使用对应同步工具；本库通过 `node website/scripts/build-llms.js` 生成资料。
+`AGENTS.md` 共享区块、`website/scripts/llms` 与公共 builder 测试由 `uni-github-delivery` 提供的同步工具维护，LLM 维护源为该技能的 `templates/llms`。单独更新入口或文档工具时使用对应同步工具；本库通过 `node website/scripts/build-llms.js` 生成资料。
 
 ## 验证
 
@@ -71,7 +71,7 @@ iOS example 使用 Ruby 3.3+，`example/Gemfile.lock` 固定 CocoaPods 1.17.0、
 
 ## 交付配置与检查
 
-共享 CI、发布配置和检查工具由 `github-delivery` 的模板与工具维护。Unif 组织值由 `code-delivery` 的 `assets/organization.json` 维护，接入时落实为本库 `.github/organization.json`，记录组织、包名规则、Pages 地址、发布 App 身份及远端设置。工具运行时读取项目文件，不依赖其他技能的安装目录；适用技能按当前任务独立选择。
+共享 CI、发布配置和检查工具由 `uni-github-delivery` 的模板与工具维护。Unif 组织值由 `unif-code-delivery` 的 `assets/organization.json` 维护，接入时落实为本库 `.github/organization.json`，记录组织、包名规则、Pages 地址、发布 App 身份及远端设置。工具运行时读取项目文件，不依赖其他技能的安装目录；适用技能按当前任务独立选择。
 
 在仓库根目录按阶段执行：
 
